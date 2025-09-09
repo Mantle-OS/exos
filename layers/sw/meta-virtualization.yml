@@ -1,0 +1,13 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/meta-openembedded.yml
+
+repos:
+  meta-virtualization:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-virtualization.git
+    path: build/layers/meta-virtualization
+
+local_conf_header:
+  0070_meta_virtualization_append: |
+    DISTRO_FEATURES:append = " virtualization "

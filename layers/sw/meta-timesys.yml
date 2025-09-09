@@ -1,0 +1,8 @@
+header:
+  version: 14
+
+repos:
+  meta-timesys:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-timesys.git
+    path: build/layers/meta-timesys
+

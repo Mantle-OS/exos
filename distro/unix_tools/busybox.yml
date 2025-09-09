@@ -1,0 +1,10 @@
+header:
+  version: 14
+
+local_conf_header:
+  0070_mantle_unit_tools_busybox: |
+    PREFERRED_PROVIDER_virtual/base-utils ??= "busybox"
+    VIRTUAL-RUNTIME_base-utils ??= "busybox"
+    VIRTUAL-RUNTIME_base-utils-hwclock ??= "busybox-hwclock"
+    VIRTUAL-RUNTIME_base-utils-syslog ??= "busybox-syslog"
+    IMAGE_INSTALL:append " busybox "

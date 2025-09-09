@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-java:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-java.git
+    path: build/layers/meta-java

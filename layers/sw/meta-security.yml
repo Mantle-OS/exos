@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-security:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-security.git
+    path: build/layers/meta-security

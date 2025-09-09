@@ -1,0 +1,11 @@
+header:
+  version: 14
+
+repos:
+  meta-freescale:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-freescale.git
+    path: build/layers/meta-freescale
+
+local_conf_header:
+  0001_meta-freescale: |
+    ACCEPT_FSL_EULA = "1"

@@ -1,0 +1,16 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+    - layers/sw/meta-qt6.yml
+
+repos:
+  meta-kf6:
+    url: https://gitlab.com/mantle-os/layers/forks/meta-kde6.git
+    path: build/layers/meta-kf6
+    branch: master
+
+local_conf_header:
+  0070_meta_kf6_local_conf_append: |
+    DISTRO_FEATURES:append = " polkit"

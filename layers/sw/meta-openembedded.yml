@@ -1,0 +1,19 @@
+header:
+  version: 14
+
+# I do not trust the mirrors on gitlab with this one.
+repos:
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    path: build/layers/meta-openembedded
+    layers:
+      meta-filesystems:
+      meta-gnome:
+      meta-initramfs:
+      meta-multimedia:
+      meta-networking:
+      meta-oe:
+      meta-perl:
+      meta-python:
+      meta-webserver:
+      meta-xfce:

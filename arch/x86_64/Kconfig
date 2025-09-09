@@ -1,0 +1,22 @@
+choice X86_64_TUNE
+	prompt "Supported x86_64 TUNES"
+	depends on X86_64
+	default HASWELL
+	help
+	  * core2-64 is based on(poky's) meta-yocto-bsp generic-x86-64.
+	  * x64_64-v2 is based on meta-intel's corei7-64 which add more support for NEHALEM based cpus
+	  * x64_64-v3 is the default that is used for mantle os. It does require newer hardware. But this is 
+	  a project and if need be we can make a v1 like debian does.
+	config CORE2_64
+		bool "core2 64(generic-x86-64)"
+	config NEHALEM
+		bool "x64_64-v2(corei7-64)"
+	config HASWELL
+		bool "x64_64-v3(mantle-64)"
+endchoice
+
+config KAS_INCLUDE_X86_64_ARCH
+	string
+	default "arch/x86_64/core2-64.yml" if CORE2_64
+	default "arch/x86_64/i7.yml" if NEHALEM
+	default "arch/x86_64/x86-86-v3.yml" if HASWELL

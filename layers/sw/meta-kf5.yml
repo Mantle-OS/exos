@@ -1,0 +1,11 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/meta-qt5.yml
+    - layers/sw/meta-office.yml
+    - layers/sw/meta-noto.yml
+
+repos:
+  meta-kf5:
+    url: https://gitlab.com/mantle-os/layers/forks/meta-kf5.git
+    path: build/layers/meta-kf5

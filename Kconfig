@@ -1,0 +1,48 @@
+mainmenu "Mantle OS Builder"
+config KAS_INCLUDE_EXOS
+        string
+        default "exos.yml"
+
+# BUILD TYPE
+comment "Build Type"
+config HAS_DEV_BUILD
+        bool
+        prompt "development build type"
+        default y
+        help
+          This is used in the paths in /srv/mantle/${RELEASE_TYPE}
+
+config RELEASE_TYPE
+        string
+        default "production" if !HAS_DEV_BUILD
+        default "development" if HAS_DEV_BUILD
+
+# BSP
+comment "BSP(Board Support Packages)"
+source "arch/Kconfig"
+source "distro/fortran/Kconfig"
+
+# DISTRO
+comment "Distro Settings"
+source "distro/pid1/Kconfig"
+source "distro/unix_tools/Kconfig"
+source "distro/ota/Kconfig"
+source "distro/de/Kconfig"
+
+# BUILD TIME
+comment "Build time Settings"
+source "distro/Kconfig"
+
+# About 
+comment "Menu Settings"
+menu "About"
+comment "Exosphere (exos) is a tool to make building mantle os a bit easier"
+config HAS_HACKING
+        bool "debug the menu(for devlopers)"
+        default n
+
+config HAS_DGB_SCREENS
+	bool "Debug screens"
+	depends on HAS_HACKING
+	default n
+endmenu

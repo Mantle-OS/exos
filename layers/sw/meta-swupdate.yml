@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-swupdate:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-swupdate.git
+    path: build/layers/meta-swupdate

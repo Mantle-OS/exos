@@ -1,0 +1,11 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+
+# target: core-image-mingw-sdktest
+
+repos:
+  meta-mingw:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-mingw.git
+    path: build/layers/meta-mingw

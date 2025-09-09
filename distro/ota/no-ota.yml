@@ -1,0 +1,10 @@
+header:
+  version: 14
+
+local_conf_header:
+  0010_mantle_ota_appends:
+    PACKAGE_TYPE ??= ""
+    PACKAGE_CLASSES ??= ""
+    PACKAGE_FEED_URIS ??= ""
+    PACKAGE_FEED_BASE_PATHS ?= ""
+    PACKAGE_FEED_ARCHS ?= ""

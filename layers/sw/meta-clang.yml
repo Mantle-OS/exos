@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-clang:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-clang.git
+    path: build/layers/meta-clang

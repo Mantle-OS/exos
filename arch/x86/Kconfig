@@ -1,0 +1,17 @@
+choice X86_TUNE
+	prompt "Supported x86 Arch"
+	depends on X86
+	default CORE2_32
+	config CORE2_32
+		bool "core2-32 -cpu Nehalem"
+	config I586
+		bool "i586"
+	config I686
+		bool "i686"
+endchoice
+
+config KAS_INCLUDE_X86_ARCH
+	string
+	default "arch/x86/core2-32.yml" if CORE2_32
+	default "arch/x86/i586.yml" if I586
+	default "arch/x86/i686.yml" if I686

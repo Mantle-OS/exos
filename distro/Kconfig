@@ -1,0 +1,96 @@
+menuconfig HAS_DL_SSTATE
+	bool "Cache Downloads and sstate"
+	default y
+	help
+	  This allows one to set the base directory to where 
+	  all the sstate, downloads, parser-cache, prserv, This 
+	  saves hours on builds over time. The directories must 
+	  exsist on the system with the correct user permissions 
+	  to read and write to the folder. example. 
+	  sudo mkdir -p /srv/mantle; 
+	  sudo chown -R $USER:$USER /srv/mantle
+
+config MANTEL_BASE_CACHE
+	string "Where the base cache should be stored"
+	depends on HAS_DL_SSTATE
+	default "/srv/mantle"
+	help
+	  This directory will get very big. It holds all downloads and sstate
+	  parser cache and much more. Make sure the user has the correct 
+	  permissions to read and write to this directory.
+
+config KAS_INCLUDE_DOWNLOADS_AND_SSTATE_OPTION
+	string 
+	default "distro/cache.yml" if HAS_DL_SSTATE
+
+config BB_GENERATE_MIRROR_TARBALLS 
+	string
+	depends on HAS_DL_SSTATE
+	default "1"
+
+config DL_DIR
+	string
+	depends on HAS_DL_SSTATE
+	default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/downloads"
+ 
+config PRSERV_HOST
+	string
+	depends on HAS_DL_SSTATE
+	default "localhost:0"
+
+config CACHE_PATH 
+	string
+	depends on HAS_DL_SSTATE
+	default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/${DISTRO_VERSION}/${SOC}"
+
+config SSTATE_DIR
+	string
+	depends on HAS_DL_SSTATE
+	default "${CACHE_PATH}/sstate-cache"
+
+config BUILDHISTORY_DIR
+	string
+	depends on HAS_DL_SSTATE
+	default "${CACHE_PATH}/buildhistory"
+
+config PERSISTENT_DIR
+	string
+	depends on HAS_DL_SSTATE
+	default "${CACHE_PATH}/cache"
+
+config BB_CACHEDIR
+	string
+	depends on HAS_DL_SSTATE
+	default "${CACHE_PATH}/parser-cache"
+
+## PATHS
+config SDK_DEPLOY
+        string
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/sdk/${DISTRO_CODENAME}/${DISTRO_VERSION}/${MACHINE}"
+
+config DEPLOY_DIR_IMAGE
+	string
+	depends on HAS_DL_SSTATE
+	default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/images/${DISTRO_CODENAME}/${DISTRO_VERSION}/${MACHINE}"
+
+config DEPLOY_DIR_DEB
+	string
+        depends on HAS_DL_SSTATE
+	default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/deb"
+
+config DEPLOY_DIR_RPM
+        string
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/rpm"
+
+config DEPLOY_DIR_IPK
+        string
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/ipk"
+
+config DEPLOY_DIR_TAR
+        string
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/tar"
+

@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-mantle-distro:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-mantle-distro.git
+    path: build/layers/meta-mantle-distro

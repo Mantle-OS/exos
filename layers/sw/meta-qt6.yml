@@ -1,0 +1,26 @@
+header:
+  version: 14
+
+repos:
+  meta-qt6:
+    url: https://gitlab.com/mantle-os/layers/forks/meta-qt6.git
+    path: build/layers/meta-qt6
+
+local_conf_header:
+  0070_meta_qt6_install_paths: |
+    QT6_INSTALL_ARCHDATADIR="${libdir}/qt6"
+    QT6_INSTALL_BINDIR="${bindir}/qt6"
+    QT6_INSTALL_DATADIR="${datadir}/qt6"
+    QT6_INSTALL_DESCRIPTIONSDIR="${libdir}/qt6/modules"
+    QT6_INSTALL_DOCDIR="${docdir}/qt6/doc"
+    QT6_INSTALL_EXAMPLESDIR="${libdir}/qt6/examples"
+    QT6_INSTALL_INCLUDEDIR="${includedir}"
+    QT6_INSTALL_LIBDIR="${libdir}"
+    QT6_INSTALL_LIBEXECDIR="${libexecdir}/qt6"
+    QT6_INSTALL_PLUGINSDIR="${libdir}/qt6/plugins"
+    QT6_INSTALL_QMLDIR="${libdir}/qt6/qml"
+    QT6_INSTALL_SYSCONFDIR="${sysconfdir}/xdg"
+    QT6_INSTALL_TESTSDIR="${prefix}/tests"
+    QT6_INSTALL_TRANSLATIONSDIR="${datadir}/qt6/translations"
+    QT6_INSTALL_MKSPECSDIR="${libdir}/qt6/mkspecs"
+    PATH:append = ":${bindir}/qt6"

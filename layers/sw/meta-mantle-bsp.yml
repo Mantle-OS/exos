@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-mantle-bsp:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-mantle-bsp.git
+    path: build/layers/meta-mantle-bsp

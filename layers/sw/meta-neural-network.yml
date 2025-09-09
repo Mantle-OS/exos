@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-neural-network:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-neural-network.git
+    path: build/layers/meta-neural-network

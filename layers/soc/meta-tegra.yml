@@ -1,0 +1,9 @@
+header:
+  version: 14
+  includes:
+
+repos:
+  meta-tegra:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-tegra.git
+    path: build/layers/meta-tegra
+

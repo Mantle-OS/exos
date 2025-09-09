@@ -1,0 +1,10 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+
+repos:
+  meta-iot-cloud:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-iot-cloud.git
+    path: build/layers/meta-iot-cloud

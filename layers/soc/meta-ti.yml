@@ -1,0 +1,20 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/meta-arm.yml
+
+repos:
+  meta-ti:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-ti.git
+    path: build/layers/meta-ti
+    layers:
+      meta-ti-bsp:
+      meta-ti-extras:
+  meta-arm:
+    layers:
+      meta-arm:
+      meta-arm-toolchain:
+
+local_conf_header:
+  0010_meta_ti_common_dir: |
+    TI_COMMON_DEPLOY = "${TMPDIR}/deploy"

@@ -1,0 +1,10 @@
+header:
+  version: 14
+  includes:
+    - layers/soc/meta-freescale.yml
+
+repos:
+  meta-freescale-3rdparty:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-freescale-3rdparty.git
+    path: build/layers/meta-freescale-3rdparty
+

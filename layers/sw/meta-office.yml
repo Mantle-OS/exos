@@ -1,0 +1,8 @@
+header:
+  version: 14
+
+repos:
+  meta-office:
+    url: https://gitlab.com/mantle-os/layers/forks/meta-office.git
+    path: build/layers/meta-office
+

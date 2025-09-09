@@ -1,0 +1,2 @@
+menuconfig HAS_DE
+bool  "Mantle OS Desktop Enviorments"

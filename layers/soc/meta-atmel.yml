@@ -1,0 +1,19 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/meta-arm.yml
+    - layers/sw/meta-openembedded.yml
+
+repos:
+  meta-atmel:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-atmel.git
+    path: build/layers/meta-atmel
+  meta-arm:
+    layers:
+      meta-arm:
+      meta-arm-toolchain:
+  meta-openembedded:
+    layers:
+      meta-oe:
+
+

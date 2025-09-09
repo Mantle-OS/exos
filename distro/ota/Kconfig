@@ -1,0 +1,71 @@
+menuconfig HAS_OTA
+	bool "Over the air updates"
+	default n
+
+config PACKAGE_FEED_URIS
+        string "server urls."
+        default "https://repos.mantle-os/${REALSE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/${REALSE_TYPE}/${SOC}"
+        depends on HAS_OTA
+	help 
+	  The repos that you want to load your packages to after running packageindex 
+	  this is what generates(depening on the type) the /etc/apt/source.list  on the target image
+	  as well.
+          See also https://docs.yoctoproject.org/ref-manual/variables.html#term-PACKAGE_FEED_URIS
+
+choice OTA_TYPE
+	prompt "The Type of OTA Packages along with the target tools."
+	depends on HAS_OTA
+	default RPM
+	config RPM
+		bool "Rpms with Dnf(Dandified YUM)"
+	config APT
+		bool "Deb's Apt(Advanced Package Tool)"	
+	config IPK
+		bool "IPK's with OPKG(Open PacKaGe Management)"
+	config TAR
+		bool "tar.gz only."
+endchoice
+
+# READONLY BELOW
+
+config PACKAGE_FEED_BASE_PATHS
+        string
+#	prompt "PACKAGE_FEED_BASE_PATHS" if HAS_DGB_SCREENS
+        depends on HAS_OTA
+        default "deb" if APT
+        default "rpm" if RPM
+        default "ipk" if IPK
+        default "tar"  if TAR
+        default "" if !HAS_OTA
+
+config PACKAGE_TYPE
+        string
+	depends on HAS_OTA
+        default "deb" if APT
+        default "rpm" if RPM
+        default "ipk" if IPK
+        default "tar"  if TAR
+        default "" if !HAS_OTA
+
+config PACKAGE_CLASSES
+	string
+	depends on HAS_OTA
+	default "package_deb" if APT
+        default "package_rpm" if RPM
+        default "package_ipk" if IPK
+        default "package_tar"  if TAR
+        default "" if !HAS_O
+
+config PACKAGE_TOOLS
+        string
+	depends on HAS_OTA
+        default " dpkg apt " if APT
+        default " rpm dnf " if RPM
+        default " opkg " if IPK
+        default ""  if TAR
+        default "" if !HAS_OTA
+
+config KAS_INCLUDE_HAS_OTA
+	string
+	default "distro/ota/ota.yml" if HAS_OTA
+	default "distro/ota/no-ota.yml" if !HAS_OTA

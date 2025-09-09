@@ -1,0 +1,10 @@
+config HAS_FORTRAN
+        bool "Fortran support"
+        default y
+        help
+	  Mantle fortran support. Default is yes as some programs 
+	  in the fill-repo use it. Also why not ?
+
+config KAS_INCLUDE_FORTRAN
+	string
+	default "distro/fortran/fortran.yml" if HAS_FORTRAN

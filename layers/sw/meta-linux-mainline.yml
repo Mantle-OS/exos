@@ -1,0 +1,9 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+
+repos:
+  meta-linux-mainline:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-linux-mainline.git
+    path: build/layers/meta-linux-mainline

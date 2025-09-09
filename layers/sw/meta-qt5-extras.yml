@@ -1,0 +1,11 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+    - layers/sw/meta-qt5.yml
+
+repos:
+  meta-qt5-extra:
+    url: https://gitlab.com/mantle-os/layers/forks/meta-qt5-extra.git
+    path: build/layers/meta-qt5-extras

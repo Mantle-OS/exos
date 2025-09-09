@@ -1,0 +1,11 @@
+choice ARM64_SOC
+	prompt "UNSUPPORTED atm check back in a couple days"
+	depends on ARM64
+	default NXP_ARM64
+	config NXP_ARM64
+		bool "nxp(freescale/imx)"
+	config NVIDIA_ARM64
+		bool "nvidia"
+	config POKY_ARM64
+		bool "Yocto's generic aarm64"
+endchoice

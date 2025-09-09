@@ -1,0 +1,10 @@
+header:
+  version: 14
+
+repos:
+  meta-imx:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-imx.git
+    path: build/layers/meta-imx
+    branch: scarthgap-6.6.36-2.1.0
+    layers:
+      .: disabled

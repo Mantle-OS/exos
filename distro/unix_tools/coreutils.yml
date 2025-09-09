@@ -1,0 +1,10 @@
+header:
+  version: 14
+
+local_conf_header:
+  0070_mantle_unix_tools_coreutils: |
+    PREFERRED_PROVIDER_virtual/base-utils ??= "packagegroup-core-base-utils"
+    VIRTUAL-RUNTIME_base-utils ??= "packagegroup-core-base-utils"
+    VIRTUAL-RUNTIME_base-utils-hwclock ??= "util-linux-hwclock"
+    VIRTUAL-RUNTIME_base-utils-syslog ??= ""
+    IMAGE_INSTALL:append = " packagegroup-core-full-cmdline "

@@ -1,0 +1,21 @@
+menuconfig HAS_INIT_MANAGER
+	bool "PID 1(Init) Managers)"
+	default y
+
+choice MANTLE_INIT_MANAGER
+	prompt "Init manager"
+	depends on HAS_INIT_MANAGER
+        default SYSTEMD
+        config SYSTEMD
+		bool "systemd"
+        config SYSTEMV
+		bool "sys5(sysvinit)"
+endchoice
+
+config INIT_MANAGER
+	string
+	depends on HAS_INIT_MANAGER
+	default "systemd" if SYSTEMD
+	default "sysvinit" if SYSTEMV
+	default "" if !HAS_INIT_MANAGER
+

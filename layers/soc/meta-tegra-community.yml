@@ -1,0 +1,10 @@
+header:
+  version: 14
+  includes:
+    - layers/soc/meta-tegra.yml
+
+repos:
+  meta-tegra-community:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-tegra-community.git
+    path: build/layers/meta-tegra-community
+

@@ -1,0 +1,10 @@
+header:
+  version: 14
+
+machine: genericx86-64
+repos:
+  poky:
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:

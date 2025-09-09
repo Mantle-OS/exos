@@ -1,0 +1,16 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+
+# target:
+#    core-image-mono:
+#    core-image-mono-console:
+#    core-image-mono-sdk:
+#    image-full-mono:
+
+repos:
+  meta-mono:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-mono.git
+    path: build/layers/meta-mono

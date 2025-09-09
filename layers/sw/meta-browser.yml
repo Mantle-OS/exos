@@ -1,0 +1,10 @@
+header:
+  version: 14
+
+repos:
+  meta-browser:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-browser.git
+    path: build/layers/meta-browser
+    layers:
+      meta-chromium:
+      meta-firefox:

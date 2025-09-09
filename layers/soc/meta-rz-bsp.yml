@@ -1,0 +1,24 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/meta-arm.yml
+    - layers/sw/meta-openembedded.yml
+    - layers/sw/poky.yml
+
+repos:
+  meta-rz-bsp:
+    url: https://gitlab.com/mantle-os/layers/soc/rz-community-bsp.git
+    path: build/layers/meta-rz-bsp
+    layers:
+      meta-rz-bsp:
+  meta-arm:
+    layers:
+      meta-arm-toolchain:
+      meta-arm:
+  meta-openembedded:
+    layers:
+      meta-oe:
+  poky:
+    layers:
+      meta:
+      meta-poky:

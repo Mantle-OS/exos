@@ -1,0 +1,12 @@
+# super simple push the builder container to 
+# VARS come from the main gitlab-ci.yml file
+docker-build:
+  stage: docker-build
+  rules:
+    - if: $BUILD_DOCKER_CONTAINER == "true"
+  tags:
+    - docker-builder
+  script:
+    - pushd docker
+    - docker build -t $CI_REGISTRY/mantle-os/${DOCKER_IMAGE}/${DOCKER_TAG} .
+    - popd

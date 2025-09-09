@@ -1,0 +1,8 @@
+header:
+  version: 14
+
+repos:
+  meta-python2:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-python2.git
+    branch: jansa/master
+    path: build/layers/meta-python2

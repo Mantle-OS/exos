@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-intel:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-intel.git
+    path: build/layers/meta-intel

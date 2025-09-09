@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-openjdk-temurin:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-openjdk-temurin.git
+    path: build/layers/meta-openjdk-temurin

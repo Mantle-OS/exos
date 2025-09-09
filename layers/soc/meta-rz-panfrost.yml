@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-rz-panfrost:
+    url: https://gitlab.com/mantle-os/layers/soc/meta-rz-panfrost.git
+    path: build/layers/meta-rz-panfrost

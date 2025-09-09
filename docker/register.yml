@@ -1,0 +1,14 @@
+# vars come from the main gitlab-ci.yml
+docker-deploy:
+  stage: docker-deploy
+  rules:
+    - if: $BUILD_DOCKER_CONTAINER == "true"
+  dependencies: [docker-build]
+  tags:
+    - docker-builder
+  when: manual
+  allow_failure: true
+  before_script:
+    - echo "$DOCKER_TOKEN" | docker login $CI_REGISTRY -u "${DOCKER_USER}" --password-stdin
+  script:
+    - docker push $CI_REGISTRY/oe/${DOCKER_IMAGE}/${DOCKER_TAG}

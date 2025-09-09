@@ -1,0 +1,8 @@
+header:
+  version: 14
+  includes:
+    - layers/soc/meta-intel.yml
+
+machine: core2-32
+
+

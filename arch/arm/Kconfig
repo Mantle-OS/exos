@@ -1,0 +1,23 @@
+choice ARM_SOC
+	prompt "Unsupported at the moment. Will come soon"
+	depends on ARM
+	default NXP_ARM
+	config NXP_ARM
+		bool "nxp freescale"
+	config ATMEL_ARM
+		bool "microchip's(atmel,linux4sam)"
+	config TI
+		bool "texas instruments"
+	config NVIDIA_ARM
+		bool "nvidia"
+	config POKY_ARM
+		bool "Yocto generic arm"
+endchoice
+
+config KAS_INCLUDE_ARM_ARCH
+	string
+#	default "arch/arm/poky/armv5.yml" if ARMV5
+#	default "arch/arm/poky/armv7.yml" if ARMV7 
+
+
+## Source all the soc vendors here.

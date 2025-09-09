@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+local_conf_header:
+  0070_mantle_fortran: |
+    FORTRAN:forcevariable = ",fortran"
+

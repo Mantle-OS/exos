@@ -1,0 +1,9 @@
+header:
+  version: 18
+
+repos:
+  meta-arm:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-arm.git
+    path: build/layers/meta-arm
+    layers:
+      .: disabled

@@ -1,0 +1,8 @@
+header:
+  version: 14
+
+local_conf_header:
+  0070_mantle_unix_tools_toybox: |
+    PREFERRED_PROVIDER_virtual/base-utils ??= "toybox"
+    VIRTUAL-RUNTIME_base-utils ??= "toybox"
+    IMAGE_INSTALL:append " toybox "

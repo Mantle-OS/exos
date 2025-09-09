@@ -1,0 +1,12 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+    - layers/sw/meta-qt5.yml
+    - layers/sw/meta-clang.yml
+
+repos:
+  meta-kde5:
+    url: https://gitlab.com/mantle-os/layers/forks/meta-kde5.git
+    path: build/layers/meta-kde5

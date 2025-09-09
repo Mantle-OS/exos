@@ -1,0 +1,9 @@
+header:
+  version: 14
+
+repos:
+  openembedded-core:
+    url: https://git.openembedded.org/git/openembedded-core
+    path: build/layers/openembedded-core
+    layers:
+      meta:

@@ -1,0 +1,21 @@
+menuconfig HAS_BASE_UTILS
+	bool "Base Utilities(UNIX tools)"
+	default y
+
+choice BASE_UTILS
+	prompt "Base Utilities"
+	depends on HAS_BASE_UTILS
+	default COREUTILS
+	config COREUTILS
+		bool "GNU coreutils(full cmdline)"
+	config BUSYBOX
+		bool "busybox"
+	config TOYBOX
+		bool "toybox"
+endchoice
+
+config KAS_INCLUDE_BASE_UTILS
+	string
+	default "distro/unix_tools/coreutils.yml" if COREUTILS
+	default "distro/unix_tools/busybox.yml" if BUSYBOX
+	default "distro/unix_tools/toybox.yml" if TOYBOX
