@@ -3,4 +3,4 @@ header:
   includes:
     - layers/soc/meta-intel.yml
 
-machine: core2-32
+machine: mantle-core2-32

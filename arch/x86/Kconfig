@@ -1,9 +1,9 @@
 choice X86_TUNE
-	prompt "Supported x86 Arch"
+	prompt "pelase pick a supported tune"
 	depends on X86
 	default CORE2_32
 	config CORE2_32
-		bool "core2-32 -cpu Nehalem"
+		bool "core2-32"
 	config I586
 		bool "i586"
 	config I686

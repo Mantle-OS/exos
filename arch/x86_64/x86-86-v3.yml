@@ -1,4 +1,6 @@
 header:
   version: 14
+  includes:
+    - layers/soc/meta-intel.yml
 
-machine: mantle-64
+machine: mantle-skylake-64
