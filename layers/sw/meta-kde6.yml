@@ -6,11 +6,9 @@ header:
     - layers/sw/meta-qt6.yml
     - layers/sw/meta-java.yml
 
-# target: meta-toolchain-qt6
-# FIXME branch name
 repos:
   meta-kde6:
-    url: https://gitlab.com/mantle-os/layers/forks/meta-kf6.git
+    url: https://gitlab.com/mantle-os/layers/forks/meta-kde6.git
     path: build/layers/meta-kde6
     branch: "master"
 
