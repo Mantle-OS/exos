@@ -5,20 +5,6 @@ header:
     - distro/ota/ota.yml
     - layers/sw/meta-mantle-bsp.yml
     - layers/sw/meta-mantle-distro.yml
-    - layers/sw/meta-openembedded.yml
-    - layers/sw/poky.yml
-    - layers/sw/meta-clang.yml
-    - layers/sw/meta-mono.yml
-    - layers/sw/meta-openjdk-temurin.yml
-    - layers/sw/meta-virtualization.yml
-    - layers/sw/meta-browser.yml
-    - layers/sw/meta-iot-cloud.yml
-    - layers/sw/meta-qt5.yml
-    - layers/sw/meta-noto.yml
-    - layers/sw/meta-office.yml
-    - layers/sw/meta-python2.yml
-    - layers/sw/meta-qt6.yml
-    - layers/sw/meta-neural-network.yml
 
 defaults:
   repos:

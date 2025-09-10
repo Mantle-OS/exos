@@ -20,7 +20,7 @@ RUN apt-get install --no-install-recommends -y \
         gawk wget git diffstat unzip texinfo \
         gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect \
         xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl-mesa0 libegl1-mesa-dev libsdl1.2-dev \
-        pylint xterm python3-subunit mesa-common-dev zstd nano \
+        pylint xterm python3-subunit mesa-common-dev zstd nano python-is-python3 \
         && \
     if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
         apt-get install --no-install-recommends -y gcc-multilib g++-multilib; \

@@ -4,7 +4,7 @@ menuconfig HAS_OTA
 
 config PACKAGE_FEED_URIS
         string "server urls."
-        default "https://repos.mantle-os/${REALSE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/${REALSE_TYPE}/${SOC}"
+        default "https://repos.mantle-os/${REALSE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/${REALSE_TYPE}/${TUNE_ARCH}"
         depends on HAS_OTA
 	help 
 	  The repos that you want to load your packages to after running packageindex 

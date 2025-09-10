@@ -1,5 +1,20 @@
 header:
   version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+    - layers/sw/meta-clang.ym
+    - layers/sw/meta-erlang
+    - layers/sw/meta-openjdk-temurin.yml
+    - layers/sw/meta-virtualization.yml
+    - layers/sw/meta-browser.yml
+    - layers/sw/meta-iot-cloud.yml
+    - layers/sw/meta-noto.yml
+    - layers/sw/meta-office.yml
+    - layers/sw/meta-python2.yml
+    - layers/sw/meta-flutter.yml
+    - layers/sw/meta-qt5.yml
+    - layers/sw/meta-qt6.yml
 
 repos:
   meta-mantle-distro:

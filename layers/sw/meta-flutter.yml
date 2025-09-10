@@ -1,0 +1,22 @@
+header:
+  version: 14
+  includes:
+    - layers/sw/poky.yml
+    - layers/sw/meta-openembedded.yml
+    - layers/sw/meta-clang.yml
+
+# target:
+#    nativesdk-flutter-sdk
+#    app-container-image.bb
+
+repos:
+  meta-flutter:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-flutter.git
+    path: build/layers/meta-fluttler
+
+local_conf_header:
+  0070_mantle_meta_flutter_remove_uninative: |
+    INHERIT:remove = "uninative"
+    ## I am not sure about 
+    ## the https://gitlab.com/mantle-os/layers/sw/meta-flutter/-/tree/scarthgap?ref_type=heads#flutter-application-recipe-variables
+    ## due to my limited understanding of flutter
