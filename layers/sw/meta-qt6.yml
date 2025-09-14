@@ -23,4 +23,4 @@ local_conf_header:
     QT6_INSTALL_TESTSDIR="${prefix}/tests"
     QT6_INSTALL_TRANSLATIONSDIR="${datadir}/qt6/translations"
     QT6_INSTALL_MKSPECSDIR="${libdir}/qt6/mkspecs"
-    PATH:append = ":${bindir}/qt6"
+    PATH:append = ":${STAGING_BINDIR_NATIVE}/${bindir}/qt6"
