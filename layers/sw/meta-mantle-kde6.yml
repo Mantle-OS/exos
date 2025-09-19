@@ -2,9 +2,9 @@ header:
   version: 14
 
 repos:
-  meta-kde6:
+  meta-mantle-kde6:
     url: https://gitlab.com/mantle-os/layers/sw/meta-mantle-kde6.git
-    path: build/layers/meta-kde6
+    path: build/layers/meta-mantle-kde6
     layers:
       meta-kde6:
       meta-kf6:
