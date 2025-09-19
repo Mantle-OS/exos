@@ -17,8 +17,7 @@ header:
 #    - layers/sw/meta-kf5.yml
 #    - layers/sw/meta-kde5.yml
     - layers/sw/meta-qt6.yml
-    - layers/sw/meta-kf6.yml
-#    - layers/sw/meta-kde6.yml
+    - layers/sw/meta-mantle-kde6.yml
 
 repos:
   meta-mantle-distro:
