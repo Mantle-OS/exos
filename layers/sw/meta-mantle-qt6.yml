@@ -2,9 +2,9 @@ header:
   version: 14
 
 repos:
-  meta-qt6:
-    url: https://gitlab.com/mantle-os/layers/forks/meta-qt6.git
-    path: build/layers/meta-qt6
+  meta-mantle-qt6:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-mantle-qt6.git
+    path: build/layers/meta-mantle-qt6
 
 local_conf_header:
   0070_meta_qt6_install_paths: |
