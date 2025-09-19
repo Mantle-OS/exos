@@ -13,7 +13,7 @@ header:
     - layers/sw/meta-flutter.yml
     - layers/sw/meta-python2.yml
     - layers/sw/meta-qt5.yml
-    - layers/sw/meta-qt6.yml
+    - layers/sw/meta-mantle-qt6.yml
     - layers/sw/meta-mantle-office.yml
     - layers/sw/meta-mantle-kde6.yml
 
