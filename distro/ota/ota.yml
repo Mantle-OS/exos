@@ -2,7 +2,7 @@ header:
   version: 14
 
 local_conf_header:
-  0010_mantle_default_ota__appends:
+  0010_mantle_default_ota__appends: |
     PACKAGE_FEED_URIS ?= "https://repos.mantle-os"
     PACKAGE_TYPE ?= "rpm"
     PACKAGE_FEED_BASE_PATHS ?= "rpm"
