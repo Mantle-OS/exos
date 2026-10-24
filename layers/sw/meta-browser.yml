@@ -1,5 +1,7 @@
 header:
   version: 14
+  includes:
+    - layers/sw/meta-scarthgap-rust-mixin.yml
 
 repos:
   meta-browser:
@@ -7,4 +9,7 @@ repos:
     path: build/layers/meta-browser
     layers:
       meta-chromium:
-      meta-firefox:
+
+
+# till I sort out the python madness on this one
+#      meta-firefox:

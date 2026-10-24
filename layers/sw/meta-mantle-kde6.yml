@@ -1,0 +1,19 @@
+header:
+  version: 14
+
+repos:
+  meta-mantle-kde6:
+    url: https://gitlab.com/mantle-os/layers/sw/meta-mantle-kde6.git
+    path: build/layers/meta-mantle-kde6
+    layers:
+      meta-kde6:
+      meta-kf6:
+      meta-plasma6:
+      meta-rs6:
+
+local_conf_header:
+  0070_mantle_kde6_distro_needs: |
+    DISTRO_FEATURES:append=" polkit"
+    INITRAMFS_MAXSIZE = "175000"
+
+

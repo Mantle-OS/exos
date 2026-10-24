@@ -13,4 +13,5 @@ repos:
 
 local_conf_header:
   0070_meta_qt5_install_paths: |
-    QT_DIR_NAME = "qt5"
+    QT_DIR_NAME = "/qt5"
+    PATH:append = ":${STAGING_BINDIR_NATIVE}${QT_DIR_NAME}"

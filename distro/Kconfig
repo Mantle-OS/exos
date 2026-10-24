@@ -41,7 +41,7 @@ config PRSERV_HOST
 config CACHE_PATH 
 	string
 	depends on HAS_DL_SSTATE
-	default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/${DISTRO_VERSION}/${SOC}"
+	default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/${DISTRO_VERSION}/${TUNE_ARCH}"
 
 config SSTATE_DIR
 	string

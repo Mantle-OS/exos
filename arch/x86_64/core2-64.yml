@@ -1,7 +1,7 @@
 header:
   version: 14
 
-machine: genericx86-64
+machine: mantle-core2-64
 repos:
   poky:
     layers:

@@ -3,4 +3,4 @@ header:
   includes:
     - layers/soc/meta-intel.yml
 
-machine: corei7-64
+machine: mantle-corei7-64

@@ -1,0 +1,8 @@
+header:
+  version: 14
+
+repos:
+  meta-scarthgap-rust-mixin:
+    url: https://git.yoctoproject.org/meta-lts-mixins
+    branch: scarthgap/rust
+    path: build/layers/meta-scarthgap-rust-mixin
