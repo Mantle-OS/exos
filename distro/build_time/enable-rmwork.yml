@@ -1,0 +1,6 @@
+header:
+  version: 14
+
+local_conf_header:
+  z-enable-rmwork: |
+    INHERIT += " rm_work "

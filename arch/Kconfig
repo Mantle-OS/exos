@@ -1,25 +1,37 @@
 menu "ARCH(Architechtures)"
 
 comment "Architechture"
+
+config ARCH_GFX_ALL
+        bool
+          select HAS_OPENGL
+          select HAS_WAYLAND
+          select HAS_KMS
+          select HAS_DRM
+          select HAS_WEB_ENGINE
+          select HAS_X11
+
 choice ARCH
-	prompt "Supported Architechtures"
-	default X86_64
-	config X86
-		bool "X86 32 bit"
-	config X86_64
-		bool "x86 64 bit"
-	config ARM
-		bool "Arm 32 bit"
-	config ARM64
-		bool "ARM 64"
-	config POWER_PC 
-		bool "PowerPC 32 bit"
-	config POWER_PC 
-		bool "PowerPC 64 bit"
-	config MIPS
-		bool "Mips 32bit"
-	config MIPS64
-		bool "Mips 64"
+        prompt "Supported Architechtures"
+        default X86_64
+        config X86
+                bool "X86 32 bit"
+                select ARCH_GFX_ALL
+        config X86_64
+                bool "x86 64 bit"
+                select ARCH_GFX_ALL
+        config ARM
+                bool "Arm 32 bit"
+        config ARM64
+                bool "ARM 64"
+        config POWER_PC
+                bool "PowerPC 32 bit"
+        config POWER_PC
+                bool "PowerPC 64 bit"
+        config MIPS
+                bool "Mips 32bit"
+        config MIPS64
+                bool "Mips 64"
 
 endchoice
 

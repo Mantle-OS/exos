@@ -1,5 +1,9 @@
-menuconfig HAS_BASE_UTILS
-	bool "Base Utilities(UNIX tools)"
+menu "Base Utilities(UNIX tools)"
+comment "What handles common unix tools"
+
+
+config HAS_BASE_UTILS
+	bool "Enable Base Utilities(UNIX tools)"
 	default y
 
 choice BASE_UTILS
@@ -19,3 +23,6 @@ config KAS_INCLUDE_BASE_UTILS
 	default "distro/unix_tools/coreutils.yml" if COREUTILS
 	default "distro/unix_tools/busybox.yml" if BUSYBOX
 	default "distro/unix_tools/toybox.yml" if TOYBOX
+
+
+endmenu

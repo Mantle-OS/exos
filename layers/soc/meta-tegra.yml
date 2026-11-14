@@ -4,6 +4,6 @@ header:
 
 repos:
   meta-tegra:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-tegra.git
+    url: https://github.com/OE4T/meta-tegra.git
     path: build/layers/meta-tegra
 

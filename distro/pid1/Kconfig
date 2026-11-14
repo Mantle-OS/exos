@@ -1,21 +1,28 @@
-menuconfig HAS_INIT_MANAGER
-	bool "PID 1(Init) Managers)"
-	default y
+menu "PID 1 Managers"
+comment "What is the 1st program to run ?"
+
+config HAS_INIT_MANAGER
+        bool "Enable PID 1(Init) Managers)"
+        default y
 
 choice MANTLE_INIT_MANAGER
-	prompt "Init manager"
-	depends on HAS_INIT_MANAGER
+        prompt "Init manager"
+        depends on HAS_INIT_MANAGER
         default SYSTEMD
         config SYSTEMD
-		bool "systemd"
+                bool "systemd"
         config SYSTEMV
-		bool "sys5(sysvinit)"
+                bool "sys5(sysvinit)"
+        config ERLINIT
+                bool "erlinit is a replacement for /sbin/init that launches an Erlang/OTP Release"
 endchoice
 
 config INIT_MANAGER
-	string
-	depends on HAS_INIT_MANAGER
-	default "systemd" if SYSTEMD
-	default "sysvinit" if SYSTEMV
-	default "" if !HAS_INIT_MANAGER
+        string
+        depends on HAS_INIT_MANAGER
+        default "systemd"  if SYSTEMD
+        default "sysvinit" if SYSTEMV
+        default "erlinit"  if ERLINIT
+        default "" if !HAS_INIT_MANAGER
 
+endmenu

@@ -3,5 +3,5 @@ header:
 
 repos:
   meta-noto:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-noto.git
+    url: https://github.com/ssfivy/meta-noto.git
     path: build/layers/meta-noto

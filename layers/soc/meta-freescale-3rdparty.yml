@@ -5,6 +5,6 @@ header:
 
 repos:
   meta-freescale-3rdparty:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-freescale-3rdparty.git
+    url: https://github.com/Freescale/meta-freescale-3rdparty.git
     path: build/layers/meta-freescale-3rdparty
 

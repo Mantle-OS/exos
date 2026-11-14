@@ -3,12 +3,12 @@ header:
   includes:
     - layers/sw/meta-arm.yml
     - layers/sw/meta-openembedded.yml
-    - layers/sw/poky.yml
 
 repos:
   meta-rz-bsp:
-    url: https://gitlab.com/mantle-os/layers/soc/rz-community-bsp.git
+    url: https://github.com/renesas-rz/rz-community-bsp.git
     path: build/layers/meta-rz-bsp
+    branch: wrynose
     layers:
       meta-rz-bsp:
   meta-arm:

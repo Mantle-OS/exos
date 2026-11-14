@@ -17,10 +17,17 @@ config RELEASE_TYPE
         default "production" if !HAS_DEV_BUILD
         default "development" if HAS_DEV_BUILD
 
+
 # BSP
-comment "BSP(Board Support Packages)"
+comment "Architecture Tune"
 source "arch/Kconfig"
-source "distro/fortran/Kconfig"
+source "distro/gfx/Kconfig"
+
+# BUILD TIME
+comment "Build time Settings"
+source "distro/pressure/Kconfig"
+source "distro/Kconfig"
+source "distro/build_time/Kconfig"
 
 # DISTRO
 comment "Distro Settings"
@@ -29,9 +36,6 @@ source "distro/unix_tools/Kconfig"
 source "distro/ota/Kconfig"
 source "distro/de/Kconfig"
 
-# BUILD TIME
-comment "Build time Settings"
-source "distro/Kconfig"
 
 # About 
 comment "Menu Settings"

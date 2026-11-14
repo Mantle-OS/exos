@@ -5,7 +5,7 @@ header:
 
 repos:
   meta-virtualization:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-virtualization.git
+    url: https://git.yoctoproject.org/meta-virtualization
     path: build/layers/meta-virtualization
 
 local_conf_header:

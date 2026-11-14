@@ -1,0 +1,8 @@
+header:
+  version: 14
+
+local_conf_header:
+  0001_b_3: |
+    BB_PRESSURE_MAX_CPU = "950000"
+    BB_PRESSURE_MAX_IO = "900000"
+    BB_PRESSURE_MAX_MEMORY = "990000"

@@ -1,0 +1,7 @@
+header:
+  version: 14
+local_conf_header:
+  z-disable-backpressure: |
+    unset BB_PRESSURE_MAX_CPU
+    unset BB_PRESSURE_MAX_IO
+    unset BB_PRESSURE_MAX_MEMORY

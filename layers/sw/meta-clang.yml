@@ -3,5 +3,5 @@ header:
 
 repos:
   meta-clang:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-clang.git
+    url: https://github.com/kraj/meta-clang.git
     path: build/layers/meta-clang

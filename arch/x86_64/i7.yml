@@ -2,5 +2,6 @@ header:
   version: 14
   includes:
     - layers/soc/meta-intel.yml
+    - layers/soc/meta-mantle-distro.yml
 
 machine: mantle-corei7-64

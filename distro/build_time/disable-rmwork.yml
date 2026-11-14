@@ -1,0 +1,6 @@
+header:
+  version: 14
+
+local_conf_header:
+  z-disablee-rm-work: |
+    INHERIT:remove = "rm_work"

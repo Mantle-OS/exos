@@ -1,0 +1,12 @@
+config HAS_OPENGL
+    bool
+config HAS_DRM
+    bool
+config HAS_KMS
+    bool
+config HAS_X11
+    bool
+config HAS_WAYLAND
+    bool
+config HAS_WEB_ENGINE
+    bool

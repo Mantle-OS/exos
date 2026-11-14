@@ -5,6 +5,6 @@ header:
 
 repos:
   meta-tegra-community:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-tegra-community.git
+    url: https://github.com/OE4T/meta-tegra-community.git
     path: build/layers/meta-tegra-community
 

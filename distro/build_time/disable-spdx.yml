@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+local_conf_header:
+  z-disable-spdx: |
+    INHERIT:remove = "create-spdx"
+

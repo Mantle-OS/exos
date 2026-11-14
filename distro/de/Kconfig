@@ -1,2 +1,82 @@
-menuconfig HAS_DE
-bool  "Mantle OS Desktop Enviorments"
+menu "Images"
+comment "Avalible Images"
+
+config HAS_CORE_IMG
+    bool "mantle-image-core"
+    default y
+config KAS_INCLUDE_MANTLE_IMAGE_CORE
+  string
+  default "distro/de/core.yml" if HAS_CORE_IMG
+
+config HAS_FULL_IMG
+    bool "mantle-image-full"
+config KAS_INCLUDE_MANTLE_IMAGE_FULL_
+  string
+  default "distro/de/full.yml" if HAS_FULL_IMG
+
+
+config HAS_DOCKER_IMG
+    bool "mantle-image-docker"
+config KAS_INCLUDE_MANTLE_IMAGE_DOCKER
+  string
+  default "distro/de/docker.yml" if HAS_DOCKER_IMG
+
+
+config HAS_SELF_IMG
+    bool "mantle-image-self"
+config KAS_INCLUDE_MANTLE_IMAGE_SELF
+  string
+  default "distro/de/docker.yml" if HAS_SELF_IMG
+
+
+
+config HAS_WESTON_IMG
+    bool "mantle-image-weston"
+    depends on HAS_WAYLAND
+config KAS_INCLUDE_MANTLE_IMAGE_WAYLAND_WESTON
+  string
+  default "distro/de/weston.yml" if HAS_WESTON_IMG
+
+## x11
+config HAS_GNOME_IMG
+    bool "mantle-image-gnome"
+    depends on HAS_X11
+
+config KAS_INCLUDE_MANTLE_IMAGE_GNOME
+  string
+  default "distro/de/gnome.yml" if HAS_GNOME_IMG
+
+
+config HAS_KDE6_IMG
+    bool "mantle-image-kde6"
+    depends on HAS_X11
+config KAS_INCLUDE_MANTLE_IMAGE_KDE6
+  string
+  default "distro/de/kde6.yml" if HAS_KDE6_IMG
+
+config HAS_XFCE_IMG
+    bool "mantle-image-xfce"
+    depends on HAS_X11
+config KAS_INCLUDE_MANTLE_IMAGE_XFCE
+  string
+  default "distro/de/xfce.yml" if HAS_XFCE_IMG
+
+
+config HAS_INSTALLER_IMG
+    bool "mantle-image-installer"
+    depends on ARCH = "X86_64"
+config KAS_INCLUDE_MANTLE_IMAGE_INSTALLER
+  string
+  default "distro/de/installer.yml" if HAS_INSTALLER_IMG
+
+
+config HAS_RECOVERY_IMG
+    bool "mantle-image-recovery"
+    depends on ARCH = "X86_64"
+config KAS_INCLUDE_MANTLE_IMAGE_RECOVERY
+  string
+  default "distro/de/recovery.yml" if HAS_RECOVERY_IMG
+
+
+endmenu
+

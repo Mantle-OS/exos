@@ -3,5 +3,5 @@ header:
 
 repos:
   meta-intel:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-intel.git
+    url: https://git.yoctoproject.org/meta-intel
     path: build/layers/meta-intel

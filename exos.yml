@@ -8,14 +8,11 @@ header:
 
 defaults:
   repos:
-    branch: scarthgap
+    branch: master
 
 distro: mantle
-
 target:
-  - mantle-image
-  - mantle-docker
-#  - mantle-fill-repo
+  - mantle-image-core
 
 local_conf_header:
   0001_a: |

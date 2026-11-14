@@ -1,0 +1,5 @@
+header:
+  version: 14
+
+target:
+  - mantle-image-kde6

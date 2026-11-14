@@ -1,21 +1,21 @@
 choice X86_64_TUNE
 	prompt "please pick out a supported tune"
 	depends on X86_64
-	default NEHALEM_CPU
+	default HASWELL_CPU
 	help
-	  * core2-64 is based on(poky's) meta-yocto-bsp generic-x86-64.
-	  * corei7-64 is based on meta-intel's corei7-64 which add more support for NEHALEM based cpus
-	  * skylake-64 is based off meta-intl's skylake-64 which uses the x86-64-v3
-	config CORE2_64_CPU
-		bool "core2-64(generic-x86-64)"
+	  * Nehalem: meta-intel's corei7-64 which add more support for sse and ss4e. But not for  avx. avx, avx2, avx-vinni, avx512
+	  * Haswell(default) Supports: sse4, avx, avx2, Unsupported: avx-vnni, avx-512 also known as x86-64-v3
+	  * Skylake x86-64-v4 Supports: sse4, avx, avx2, avx-512 also known as x86-64-v4
 	config NEHALEM_CPU
 		bool "corei7-64"
+	config HASWELL_CPU
+		bool "Haswell x86_64 v3(Default)"
 	config SKYLAKE_CPU
-		bool "skylake-64"
+		bool "Skylake"
 endchoice
 
 config KAS_INCLUDE_X86_64_ARCH
 	string
-	default "arch/x86_64/core2-64.yml" if CORE2_64_CPU
 	default "arch/x86_64/i7.yml" if NEHALEM_CPU
-	default "arch/x86_64/x86-86-v3.yml" if SKYLAKE_CPU
+	default "arch/x86_64/x86-86-v3.yml" if HASWELL_CPU
+	default "arch/x86_64/x86-86-v4.yml" if SKYLAKE_CPU

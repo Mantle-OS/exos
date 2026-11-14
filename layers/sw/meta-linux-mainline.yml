@@ -5,5 +5,5 @@ header:
 
 repos:
   meta-linux-mainline:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-linux-mainline.git
+    url: https://github.com/betafive/meta-linux-mainline.git
     path: build/layers/meta-linux-mainline

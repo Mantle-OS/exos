@@ -3,7 +3,7 @@ header:
 
 env:
   VENDOR: "mantel"
-  CACHE_BASE: "/srv/mantle"
+  CACHE_BASE: "/srv/yocto/mantle"
 
 local_conf_header:
   0001_meta-mantle_downloads: |

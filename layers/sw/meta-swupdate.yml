@@ -3,5 +3,5 @@ header:
 
 repos:
   meta-swupdate:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-swupdate.git
+    url: https://github.com/sbabic/meta-swupdate.git
     path: build/layers/meta-swupdate

@@ -1,0 +1,6 @@
+header:
+  version: 14
+
+local_conf_header:
+  z-disablee-cve-check: |
+    INHERIT:remove = "cve-check"

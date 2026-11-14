@@ -3,5 +3,5 @@ header:
 
 repos:
   meta-mantle-office:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-mantle-office.git
+    url: https://github.com/Mantle-OS/meta-mantle-office.git
     path: build/layers/meta-mantle-office

@@ -1,7 +1,7 @@
 header:
   version: 14
   includes:
-    - layers/sw/poky.yml
+    - layers/sw/openembedded-core.yml
     - layers/sw/meta-openembedded.yml
 
 # machine: aws-ec2-arm64
@@ -9,5 +9,5 @@ header:
 
 repos:
   meta-aws:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-aws.git
+    url: https://git.yoctoproject.org/meta-aws
     path: build/layers/meta-aws

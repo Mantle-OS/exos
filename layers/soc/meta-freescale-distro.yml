@@ -1,10 +1,9 @@
 header:
   version: 14
   includes:
-    - layers/sw/meta-openembedded.yml
     - layers/soc/meta-freescale.yml
 
 repos:
   meta-freescale-distro:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-freescale-distro.git
+    url: https://github.com/Freescale/meta-freescale-distro.git
     path: build/layers/meta-freescale-distro

@@ -8,13 +8,13 @@ header:
 
 repos:
   meta-erlang:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-erlang.git
+    url: https://github.com/meta-erlang/meta-erlang.git
     path: build/layers/meta-erlang
 
 local_conf_header:
   0030_mantle_meta_erlang_versions: |
-    PREFERRED_VERSION_erlang = "27.0"
-    PREFERRED_VERSION_erlang-native = "27.0"
-    PREFERRED_VERSION_elixir = "1.16.3"
-    PREFERRED_VERSION_elixir-native = "1.16.3"
+    PREFERRED_VERSION_erlang = "29.0.6"
+    PREFERRED_VERSION_erlang-native = "29.0.6"
+    PREFERRED_VERSION_elixir = "1.19.5"
+    PREFERRED_VERSION_elixir-native = "1.19.5"
 

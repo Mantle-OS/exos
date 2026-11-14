@@ -1,0 +1,60 @@
+menu "Build Time Options"
+comment "Build time options for Exos"
+
+
+comment "INHERIT Buildtime Options"
+config HAS_RM_WORK
+        bool
+        prompt "INHERIT += rm_work"
+        default y
+        help
+          removes the work after the bnuild great for saving space and ci/cd
+          horrible when you want to debug something
+config KAS_INCLUDE_RM_WORK_OPTION
+        string
+        default "distro/build_time/enable-rmwork.yml" if HAS_RM_WORK
+        default "distro/build_time/disable-rmwork.yml" if !HAS_RM_WORK
+
+config HAS_SPDX
+        bool
+        prompt "INHERIT += create-spdx"
+        default n
+        help
+          creates the spdk slash sbom for the build. Great if you are releasing code
+config KAS_INCLUDE_SPDX_OPTION
+        string
+        default "distro/build_time/enable-spdx.yml" if HAS_SPDX
+        default "distro/build_time//disable-spdx.yml" if !HAS_SPDX
+
+config HAS_CVE
+        bool
+        prompt "INHERIT += cve-check"
+        default n
+        help
+          run a simple cve check on the code base. Note full resolve anything or understand
+          false positives etc
+config KAS_INCLUDE_CVE_OPTION
+        string
+        default "distro/build_time/enable-cve.yml" if HAS_CVE
+        default "distro/build_time/disable-cve.yml" if !HAS_CVE
+
+
+comment "Toolchain buildtime Options"
+
+
+config HAS_FORTRAN
+        bool "Fortran support"
+        default y
+        help
+          Mantle fortran support. Default is yes as some programs
+          in the fill-repo use it. Also why not ?
+config KAS_INCLUDE_FORTRAN
+        string
+        default "distro/fortran/fortran.yml" if HAS_FORTRAN
+
+
+
+
+
+
+endmenu

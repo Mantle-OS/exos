@@ -3,8 +3,8 @@ header:
 
 repos:
   meta-imx:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-imx.git
+    url: https://github.com/nxp-imx/meta-imx.git
     path: build/layers/meta-imx
-    branch: scarthgap-6.6.36-2.1.0
+    branch: wrynose-6.18.20-2.0.0
     layers:
       .: disabled

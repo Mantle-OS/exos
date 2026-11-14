@@ -7,4 +7,4 @@ local_conf_header:
     VIRTUAL-RUNTIME_base-utils ??= "busybox"
     VIRTUAL-RUNTIME_base-utils-hwclock ??= "busybox-hwclock"
     VIRTUAL-RUNTIME_base-utils-syslog ??= "busybox-syslog"
-    IMAGE_INSTALL:append " busybox "
+    IMAGE_INSTALL:append = " busybox "

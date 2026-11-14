@@ -1,14 +1,12 @@
 header:
   version: 14
   includes:
-    - layers/sw/poky.yml
     - layers/sw/meta-openembedded.yml
-    - layers/sw/meta-python2.yml
     - layers/sw/meta-clang.yml
 
 repos:
   meta-qt5:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-qt5.git
+    url: https://github.com/meta-qt5/meta-qt5.git
     path: build/layers/meta-qt5
 
 local_conf_header:

@@ -1,9 +1,11 @@
 header:
   version: 14
+  includes:
+    - layers/sw/bitbake.yml
 
 repos:
   openembedded-core:
-    url: https://git.openembedded.org/git/openembedded-core
+    url: https://github.com/openembedded/openembedded-core.git
     path: build/layers/openembedded-core
     layers:
       meta:

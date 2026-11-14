@@ -1,10 +1,11 @@
 header:
   version: 14
+  includes:
+    - layers/sw/openembedded-core.yml
 
-# I do not trust the mirrors on gitlab with this one.
 repos:
   meta-openembedded:
-    url: https://git.openembedded.org/meta-openembedded
+    url: https://github.com/openembedded/meta-openembedded.git
     path: build/layers/meta-openembedded
     layers:
       meta-filesystems:

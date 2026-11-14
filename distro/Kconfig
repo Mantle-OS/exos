@@ -1,96 +1,144 @@
-menuconfig HAS_DL_SSTATE
-	bool "Cache Downloads and sstate"
-	default y
-	help
-	  This allows one to set the base directory to where 
-	  all the sstate, downloads, parser-cache, prserv, This 
-	  saves hours on builds over time. The directories must 
-	  exsist on the system with the correct user permissions 
-	  to read and write to the folder. example. 
-	  sudo mkdir -p /srv/mantle; 
-	  sudo chown -R $USER:$USER /srv/mantle
+menu "File Path Options"
+comment "Various options for pathing on the build settings"
 
-config MANTEL_BASE_CACHE
-	string "Where the base cache should be stored"
-	depends on HAS_DL_SSTATE
-	default "/srv/mantle"
-	help
-	  This directory will get very big. It holds all downloads and sstate
-	  parser cache and much more. Make sure the user has the correct 
-	  permissions to read and write to this directory.
+config HAS_DL_SSTATE
+        bool "Enable Cache Downloads and sstate"
+        default y
+        help
+          This allows one to set the base directory to where
+          all the sstate, downloads, parser-cache, prserv, This
+          saves hours on builds over time. The directories must
+          exsist on the system with the correct user permissions
+          to read and write to the folder. example.
+          sudo mkdir -p /srv/mantle;
+          sudo chown -R $USER:$USER /srv/yocto/mantle
 
 config KAS_INCLUDE_DOWNLOADS_AND_SSTATE_OPTION
-	string 
-	default "distro/cache.yml" if HAS_DL_SSTATE
+        string
+        default "distro/cache.yml" if HAS_DL_SSTATE
+
+config MANTEL_BASE_CACHE
+        string "Where the base cache should be stored"
+        depends on HAS_DL_SSTATE
+        default "/srv/yocto/mantle"
+        help
+          This directory will get very big. It holds all downloads and sstate
+          parser cache and much more. Make sure the user has the correct
+          permissions to read and write to this directory.
 
 config BB_GENERATE_MIRROR_TARBALLS 
-	string
-	depends on HAS_DL_SSTATE
-	default "1"
+        string "BB_GENERATE_MIRROR_TARBALLS"
+        depends on HAS_DL_SSTATE
+        default "1"
+        help
+         Causes tarballs of the Git repositories, including the Git metadata,
+         to be placed in the DL_DIR directory. Anyone wishing to create a source
+         mirror would want to enable this variable.
 
 config DL_DIR
-	string
-	depends on HAS_DL_SSTATE
-	default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/downloads"
+        string
+        prompt "DL_DIR"
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/downloads"
+        help
+          The central download directory used by the build process to store downloads.
  
-config PRSERV_HOST
-	string
-	depends on HAS_DL_SSTATE
-	default "localhost:0"
 
+config PRSERV_HOST
+        string
+        prompt "PRSERV_HOST"
+        depends on HAS_DL_SSTATE
+        default "localhost:0"
+        help
+          The network based PR service host and port.
+#
 config CACHE_PATH 
-	string
-	depends on HAS_DL_SSTATE
-	default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/${DISTRO_VERSION}/${TUNE_ARCH}"
+        string "CACHE_PATH"
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${DISTRO_CODENAME}/${DISTRO_VERSION}/${TUNE_ARCH}"
+        help
+          Directory that holds cache files
+
 
 config SSTATE_DIR
-	string
-	depends on HAS_DL_SSTATE
-	default "${CACHE_PATH}/sstate-cache"
+        string "SSTATE_DIR"
+        depends on HAS_DL_SSTATE
+        default "${CACHE_PATH}/sstate-cache"
+        help
+          The directory for the shared state cache.
 
 config BUILDHISTORY_DIR
-	string
-	depends on HAS_DL_SSTATE
-	default "${CACHE_PATH}/buildhistory"
+        string "BUILDHISTORY_DIR"
+        depends on HAS_DL_SSTATE
+        default "${CACHE_PATH}/buildhistory"
+        help
+          When inheriting the buildhistory class, this variable specifies the directory in which build history
+          information is kept. For more information on how the variable works, see the buildhistory class.
 
 config PERSISTENT_DIR
-	string
-	depends on HAS_DL_SSTATE
-	default "${CACHE_PATH}/cache"
+        string "PERSISTENT_DIR"
+        depends on HAS_DL_SSTATE
+        default "${CACHE_PATH}/cache"
+        help
+          Specifies the directory BitBake uses to store data that should be preserved between builds.
+          In particular, the data stored is the data that uses BitBake’s persistent data API,
+          the data used by the PR Server and PR Service, and the default location of
+          the Hash Equivalence databas
 
 config BB_CACHEDIR
-	string
-	depends on HAS_DL_SSTATE
-	default "${CACHE_PATH}/parser-cache"
+        string "BB_CACHEDIR"
+        depends on HAS_DL_SSTATE
+        default "${CACHE_PATH}/parser-cache"
+        help
+          Specifies the code parser cache directory distinct from CACHE and PERSISTENT_DIR.
+
 
 ## PATHS
 config SDK_DEPLOY
-        string
+        string "SDK_DEPLOY"
         depends on HAS_DL_SSTATE
         default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/sdk/${DISTRO_CODENAME}/${DISTRO_VERSION}/${MACHINE}"
+        help
+          Where the SDK is wrote to when building a sdk image
 
 config DEPLOY_DIR_IMAGE
-	string
-	depends on HAS_DL_SSTATE
-	default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/images/${DISTRO_CODENAME}/${DISTRO_VERSION}/${MACHINE}"
+        string "DEPLOY_DIR_IMAGE"
+        depends on HAS_DL_SSTATE
+        default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/images/${DISTRO_CODENAME}/${DISTRO_VERSION}/${MACHINE}"
+        help
+          Points to the area that the Exos build system uses to place images
+          and other associated output files that are ready to be deployed onto
+          the target machine
 
 config DEPLOY_DIR_DEB
-	string
+        string "DEPLOY_DIR_DEB"
         depends on HAS_DL_SSTATE
-	default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/deb"
+        default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/deb"
+        help
+          Points to the area that the Exos build system uses to place Debian packages
+          that are ready to be used outside of the build system
 
 config DEPLOY_DIR_RPM
-        string
+        string "DEPLOY_DIR_RPM"
         depends on HAS_DL_SSTATE
         default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/rpm"
-
+        help
+          Points to the area that the Exos build system uses to place RPM packages
+          that are ready to be used outside of the build system
 config DEPLOY_DIR_IPK
-        string
+        string "DEPLOY_DIR_IPK"
         depends on HAS_DL_SSTATE
         default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/ipk"
+        help
+          Points to the area that the Exos build system uses to place IPK packages
+          that are ready to be used outside of the build system
 
 config DEPLOY_DIR_TAR
-        string
+        string "DEPLOY_DIR_TAR"
         depends on HAS_DL_SSTATE
         default "${MANTEL_BASE_CACHE}/${RELEASE_TYPE}/ota/${DISTRO_CODENAME}/${DISTRO_VERSION}/tar"
+        help
+          Points to the area that the Exos build system uses to place TAR Ball packages
+          that are ready to be used outside of the build system
 
+endmenu

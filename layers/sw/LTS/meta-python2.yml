@@ -3,6 +3,6 @@ header:
 
 repos:
   meta-python2:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-python2.git
+    url: https://github.com/shr-project/meta-python2.git
     branch: jansa/master
     path: build/layers/meta-python2

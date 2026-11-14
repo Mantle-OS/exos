@@ -1,9 +1,11 @@
 header:
   version: 14
+  includes:
+    - layers/sw/meta-openembedded.yml
 
 repos:
   meta-freescale:
-    url: https://gitlab.com/mantle-os/layers/soc/meta-freescale.git
+    url: https://github.com/Freescale/meta-freescale.git
     path: build/layers/meta-freescale
 
 local_conf_header:

@@ -3,7 +3,7 @@ header:
 
 repos:
   meta-arm:
-    url: https://gitlab.com/mantle-os/layers/sw/meta-arm.git
+    url: https://git.yoctoproject.org/meta-arm
     path: build/layers/meta-arm
     layers:
       .: disabled

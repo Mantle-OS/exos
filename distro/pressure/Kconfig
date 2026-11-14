@@ -1,0 +1,69 @@
+menu "Threads Buildtime Options"
+comment "Various Threading and Schedualar Details"
+
+config HAS_PRESSURE
+        bool "Enable BB_PRESSURE_MAX_* backpressure throttling"
+        default y
+        help
+          Enables BitBake's PSI-based scheduler backpressure
+          (BB_PRESSURE_MAX_CPU, BB_PRESSURE_MAX_IO, BB_PRESSURE_MAX_MEMORY).
+          When disabled, all three are explicitly unset, restoring
+          BitBake's un-throttled default behavior.
+
+# this is not seen in the menuconfig
+config KAS_INCLUDE_PRESSURE_OPTION
+        string
+        default "distro/pressure/enable-backpressure.yml" if HAS_PRESSURE
+        default "distro/pressure/disable-backpressure.yml" if !HAS_PRESSURE
+
+## this is seen in the menu
+config BB_PRESSURE_MAX_CPU
+        int
+        depends on HAS_PRESSURE
+        default 950000
+        prompt "Average CPU"
+        help
+          Specifies a maximum CPU pressure threshold, above which BitBake's scheduler
+          will not start new tasks (providing there is at least one active task).
+          950000 is 95% of the overall CPU which is the default.
+
+config BB_PRESSURE_MAX_IO
+        int
+        depends on HAS_PRESSURE
+        default 900000
+        prompt "Average IO"
+        help
+          Specifies a maximum I/O pressure threshold, above which BitBake's scheduler
+          will not start new tasks (providing there is at least one active task).
+          900000 is 90% of the overall IO which is the default.
+
+config BB_PRESSURE_MAX_MEMORY
+        int
+        depends on HAS_PRESSURE
+        default 990000
+        prompt "Average Memory"
+        help
+          Specifies a maximum memory pressure threshold, above which BitBake's scheduler
+          will not start new tasks (providing there is at least one active task). This
+          is a last-resort backstop to prevent OOM errors from swapping/reclaim, not a
+          proactive throttle. kept high by default so large in-memory builds (nodejs,
+          chromium, qtwebengine) aren't falsely penalized.
+          990000 is 99% of the overall memory which is the default.
+
+
+# comment "Various Threading and Schedualar Details"
+# config BB_NUMBER_THREADS
+#         string
+#         default "${@oe.utils.cpu_count()}"
+#         prompt "Number of threds"
+#         help
+#           The maximum number of tasks BitBake should run in parallel at any one time
+#
+# config PARALLEL_MAKE
+#         string
+#         default "${@oe.utils.cpu_count()}"
+#         prompt "Make -j flag"
+#         help
+#           Extra options passed to the build tool command (make, ninja or more specific build engines, like the Go language one) during the do_compile task,
+
+endmenu
