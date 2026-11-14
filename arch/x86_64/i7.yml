@@ -2,6 +2,7 @@ header:
   version: 14
   includes:
     - layers/soc/meta-intel.yml
-    - layers/soc/meta-mantle-distro.yml
+    - layers/sw/meta-mantle-distro.yml
+    - layers/sw/meta-mantle-bsp.yml
 
 machine: mantle-corei7-64

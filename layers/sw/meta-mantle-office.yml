@@ -1,7 +1,0 @@
-header:
-  version: 14
-
-repos:
-  meta-mantle-office:
-    url: https://github.com/Mantle-OS/meta-mantle-office.git
-    path: build/layers/meta-mantle-office

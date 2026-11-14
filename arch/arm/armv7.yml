@@ -1,7 +1,7 @@
 header:
   version: 14
   includes:
-    - layers/soc/meta-mantle-bsp.yml
-    - layers/soc/meta-mantle-distro.yml
+    - layers/sw/meta-mantle-bsp.yml
+    - layers/sw/meta-mantle-distro.yml
 
 machine: mantle-armv7
