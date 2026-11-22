@@ -19,5 +19,5 @@ header:
 
 repos:
   meta-mantle-distro:
-    url: https://github.com/Mantle-OS/meta-mantle-distro.git
+    url: git@github.com:Mantle-OS/meta-mantle-distro.git
     path: build/layers/meta-mantle-distro

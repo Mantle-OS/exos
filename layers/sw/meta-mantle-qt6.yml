@@ -3,7 +3,7 @@ header:
 
 repos:
   meta-mantle-qt6:
-    url: https://github.com/Mantle-OS/meta-mantle-qt6.git
+    url: git@github.com:Mantle-OS/meta-mantle-qt6.git
     path: build/layers/meta-mantle-qt6
 
 local_conf_header:

@@ -2,7 +2,7 @@ header:
   version: 14
 
 env:
-  VENDOR: "mantel"
+  VENDOR: "mantle"
   CACHE_BASE: "/srv/yocto/mantle"
 
 local_conf_header:

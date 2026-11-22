@@ -5,3 +5,9 @@ repos:
   meta-clang:
     url: https://github.com/kraj/meta-clang.git
     path: build/layers/meta-clang
+
+
+bblayers_conf_header:
+  z_meta_clang_rm_qtbase : |
+    BBMASK += "meta-clang/dynamic-layers/qt6-layer/recipes-qt/qt6/qtbase_.*\.bbappend$"
+

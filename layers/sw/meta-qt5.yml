@@ -6,7 +6,7 @@ header:
 
 repos:
   meta-qt5:
-    url: https://github.com/meta-qt5/meta-qt5.git
+    url: git@github.com:Mantle-OS/meta-qt5.git
     path: build/layers/meta-qt5
 
 local_conf_header:

@@ -3,5 +3,5 @@ header:
 
 repos:
   meta-mantle-bsp:
-    url: https://github.com/Mantle-OS/meta-mantle-bsp.git
+    url: git@github.com:Mantle-OS/meta-mantle-bsp.git
     path: build/layers/meta-mantle-bsp

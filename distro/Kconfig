@@ -10,7 +10,7 @@ config HAS_DL_SSTATE
           saves hours on builds over time. The directories must
           exsist on the system with the correct user permissions
           to read and write to the folder. example.
-          sudo mkdir -p /srv/mantle;
+          sudo mkdir -p /srv/yocto/mantle;
           sudo chown -R $USER:$USER /srv/yocto/mantle
 
 config KAS_INCLUDE_DOWNLOADS_AND_SSTATE_OPTION

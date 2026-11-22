@@ -3,7 +3,7 @@ header:
 
 repos:
   meta-mantle-kde6:
-    url: https://github.com/Mantle-OS/meta-mantle-kde6.git
+    url: git@github.com:Mantle-OS/meta-mantle-kde6.git
     path: build/layers/meta-mantle-kde6
     layers:
       meta-kde6:
