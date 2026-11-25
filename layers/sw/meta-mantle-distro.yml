@@ -9,7 +9,7 @@ header:
     - layers/sw/meta-erlang.yml
     - layers/sw/meta-virtualization.yml
     - layers/sw/meta-aws.yml
-    # - layers/sw/meta-browser.yml
+    - layers/sw/meta-browser.yml
     # - layers/sw/meta-iot-cloud.yml
     - layers/sw/meta-noto.yml
     - layers/sw/meta-flutter.yml

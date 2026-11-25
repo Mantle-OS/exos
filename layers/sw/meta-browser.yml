@@ -7,7 +7,4 @@ repos:
     path: build/layers/meta-browser
     layers:
       meta-chromium:
-
-
-# till I sort out the python madness on this one
-#      meta-firefox:
+      meta-firefox:
